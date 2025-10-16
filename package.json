@@ -7,7 +7,7 @@
     "github-build": "npm-run-all build:*",
     "clean": "rm -rf _site",
     "build:postcss": "postcss src/styles/styles.css -o dist/assets/styles/styles.css",
-    "build:eleventy": "eleventy --pathprefix 'Portfolio'",
+    "build:eleventy": "eleventy --pathprefix 'Portfolio2025'",
     "dev:postcss": "postcss src/styles/styles.css -o dist/assets/styles/styles.css -w",
     "dev:eleventy": "npx @11ty/eleventy --serve"
   },
