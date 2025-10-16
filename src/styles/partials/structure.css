@@ -45,3 +45,7 @@ body{
     width: calc((100% / var(--cards-per-row)) - ((var(--cards-per-row) - 1) * var(--gap))/var(--cards-per-row));
   }
 }
+.full-abs{
+  position: absolute;
+  top:0;bottom:0;left:0;right:0;
+}

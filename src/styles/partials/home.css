@@ -5,11 +5,74 @@
     justify-content: center;
     align-items: center;
     padding: 64px;
+    overflow: hidden;
+    position: relative;
     .content{
         display: flex;
         width:100%;
         justify-content: space-between;
     }
+}
+#HomeHeroBG{
+    path{
+        fill:none;
+        stroke: #dc97e5;
+    }
+}
+.hero-computer-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .ground-wrapper{
+        z-index: 0;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        transform: scale(1.2);
+    }
+    canvas{
+        z-index: 1;
+    }
+    .circle-svg-wrapper{
+        position: absolute;
+        width:100%;
+        height: 100%;
+        .circle-svg{
+            opacity: .4;
+            position: absolute;
+            width:100%;
+            height: 100%;
+        }
+        &:nth-of-type(1){
+            .circle-svg{
+            transform: scale(.6) rotate(45deg);
+            opacity: 1;
+            }
+        }
+        &:nth-of-type(2){
+            .circle-svg{
+            transform: scale(.8) rotate(75deg);;
+            opacity: .7;
+            }
+        }
+        path{
+            fill:transparent;
+            stroke:white;
+            stroke-width: 2px;
+        }
+    }
+    .ground{
+            width:100%;
+            height:100%;
+            border-radius: 100%;
+            background-color: rgb(189, 44, 141);
+            filter: blur(30px);
+            opacity: .3;
+            mix-blend-mode: hard-light;
+            position: relative;
+            z-index: 0;
+        }
 }
 .project-display{
     height: calc(100vh - 200px);

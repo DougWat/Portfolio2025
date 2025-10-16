@@ -3,21 +3,26 @@ layout: layout.liquid
 title: Home Page
 ---
 <section id="Home">
+    <div id="HomeHeroBG" class="full-abs rellax" data-rellax-speed="-4">
+        {% include 'svganim/herobg'%}
+    </div>
     <div class="content container">
-        <div class="blank">
-        <div id="HeroComputer">
+
+        <div class="hero-computer-block">
             <div class="ground-wrapper">
                 <div class="ground">
 
                 </div>
                 <div class="full-abs circle">
-                    {% include 'svganim/circle' %}
-                    {% include 'svganim/circle' %}
-                    {% include 'svganim/circle' %}
+                    {% include 'svganim/circle', rellax:"-.5" %}
+                    {% include 'svganim/circle', rellax:".5" %}
+                    {% include 'svganim/circle', rellax:"1.5" %}
                 </div>
             </div>
+            <div id="HeroComputer" class="rellax" data-rellax-speed="2.5">
+            </div>
         </div>
-        </div>
+
         <div class="project-display">
             <div class="project-wrapper">
                 <div class="project-scroller swiper">
