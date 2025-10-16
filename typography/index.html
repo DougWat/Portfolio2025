@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Typography Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/Portfolio/assets/scripts/pathtrace.js"></script>
+    <script src="/Portfolio/assets/scripts/rotato.js"></script>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+    <script src="/Portfolio/assets/scripts/pixi-filters.js"></script>
+    <script src="/Portfolio/assets/scripts/gif.min.js"></script>
+    <script src="/Portfolio/assets/scripts/svganim.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    let Mouse = {x:0,y:0};
+    const time = function(){
+      this.then = Date.now();
+      this.now  = Date.now();
+      this.intDelta;
+      this.delta = 0;
+
+      this.NextFrame = function(){
+        this.then = this.now;
+        this.now = Date.now();
+        this.intDelta = (this.now - this.then);
+        this.delta = this.intDelta/1000;
+      }
+
+    }
+      const Time = new time;
+      
+      (function AdvTime(){
+        Time.NextFrame();
+        requestAnimationFrame(AdvTime);
+      })();
+
+      (function ReportMousePos(){
+        document.onmousemove = (e)=>{
+          Mouse.x = e.pageX;
+          Mouse.y = e.pageY;
+        }
+      })();
+
+      
+
+    </script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "EffectComposer": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js",
+          "GlitchPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/GlitchPass.js",
+          "RenderPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/RenderPass.js",
+          "OutputPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/OutputPass.js",
+          "GLTFLoader":"https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+        }
+      }
+    </script>
+
+    <script>
+      const ThreesAssetAtlas = {
+        LeftEye_Default: '/Portfolio/assets/images/home/computer/eyel.gif',
+        RightEye_Default: '/Portfolio/assets/images/home/computer/eyer.gif',
+        LeftEye_Blink: '/Portfolio/assets/images/home/computer/eyel_blink.gif',
+        RightEye_Blink: '/Portfolio/assets/images/home/computer/eyer_blink.gif',
+        Mouth_Default: '/Portfolio/assets/images/home/computer/mouth.gif',
+        Mouth_Simple: '/Portfolio/assets/images/home/computer/mouth_simple.gif',
+        Mouth_Drool: '/Portfolio/assets/images/home/computer/mouth_drool.gif',
+        Computer: '/Portfolio/assets/models/computer/computer.glb'
+      }
+    </script>
+
+    <link rel="stylesheet" href="/Portfolio/assets/styles/styles.css"/>
+    
+  </head>
+  <body id="Page-typography">
+    <a style="padding:12px;display:block; float:left;" href="/">Back</a>
+<section class="typography section-padding">
+    <div class="container content">
+        <div class="typography-col typography-typefaces">
+            <div class="typeface-wrapper font-1">
+                <div class="typeface-title">
+                    <p>Bitter</p>
+                </div>
+                <div class="typeface-display">
+                    <h1>Aa</h1>
+                    <h2>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                    abcdefghijklmnopqrstuvwxyz<br/>
+                    0123456789<br/>
+                    !$#S%^&*
+                    </h2>
+                </div>
+            </div>
+            <div class="typeface-wrapper font-2">
+                <div class="typeface-title">
+                    <p>Poppins</p>
+                </div>
+                <div class="typeface-display">
+                    <h1>Aa</h1>
+                    <h2>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                    abcdefghijklmnopqrstuvwxyz<br/>
+                    0123456789<br/>
+                    !$#S%^&*
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class='typography-col typeface-layout'>
+            <div class="segment">
+                <div class="title">
+                    <p>Title</p>
+                </div>
+                <h1>A Cool Title</h1>
+            </div>
+            <div class="segment">
+                <div class="title">
+                    <p>Lead</p>
+                </div>
+                <h1 class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+            </div>
+            <div class="segment">
+                <div class="title">
+                    <p>Paragraph</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+            </div>
+            <div class="segment">
+                <div class="title">
+                    <p>Button</p>
+                </div>
+                <div>
+                    <a class="button">Click Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container colors">
+        <div class="swatch light" style="--swatch-color:#141414">
+    <p>#141414</p>
+</div>
+        <div class="swatch light" style="--swatch-color:#3d3d3d">
+    <p>#3d3d3d</p>
+</div>
+        <div class="swatch light" style="--swatch-color:#197278">
+    <p>#197278</p>
+</div>
+        <div class="swatch " style="--swatch-color:#48e5c2">
+    <p>#48e5c2</p>
+</div>
+        <div class="swatch " style="--swatch-color:#fdfbfd">
+    <p>#fdfbfd</p>
+</div>
+    </div>
+</section>
+  </body>
+  <script type="module" src="/Portfolio/assets/scripts/hero-computer.js"></script>
+</html>
