@@ -1,0 +1,11 @@
+@import './partials/reset.css';
+@import './partials/vars.css';
+
+@import './partials/svganim.css';
+
+@import './partials/typography.css';
+@import './partials/structure.css';
+@import './partials/input.css';
+
+@import './partials/home.css';
+@import './partials/typography-page.css';

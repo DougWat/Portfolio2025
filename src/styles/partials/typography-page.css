@@ -1,0 +1,85 @@
+.typography{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .content{
+        display: flex;
+        gap:40px;
+    }
+    .colors{
+        margin-top: 60px;
+        display: flex;
+    }
+    .swatch{
+        width: 20%;
+        background-color: var(--swatch-color);
+        flex-grow: 1;
+        padding: 24px;
+        height: 200px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        &.light{
+            color:$text-light;
+        }
+        p{
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 1.7rem;
+        }
+    }
+}
+.typography-col{
+    width: calc(50% - 20px);
+}
+.typeface-wrapper{
+    display: flex;
+    gap: 20px;
+    .typeface-display{
+        h1{
+            font-size: 8rem;
+            line-height: .9em;
+            margin-bottom: 24px;;
+        }
+        h2{
+            font-size: 1.4rem;
+        }
+    }
+    .typeface-title{
+        width: 100px;
+        opacity: .6;
+    }
+    &.font-1{
+        *{
+            font-family: $font-header;
+        }
+    }
+    &.font-2{
+        *{
+            font-family: $font-body;
+            font-weight: 400;
+        }
+    }
+}
+.typography-typefaces{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+.typeface-layout{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    .segment{
+        display: flex;
+        gap:20px;
+        .title{
+            flex-shrink: 0;
+            width: 100px;
+            opacity: .6;
+        }
+    }
+}

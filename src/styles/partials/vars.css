@@ -1,0 +1,18 @@
+html{
+    @custom-media --xs (max-width: 500px);
+    @custom-media --sm (max-width: 640px);
+    @custom-media --md (max-width: 768px);
+    @custom-media --lg (max-width: 1024px);
+    @custom-media --xl (max-width: 1240px);
+    @custom-media --xxl (max-width: 1400px);
+    
+    $font-body:"Poppins", sans-serif;
+    $font-header: "Bitter", sans-serif;
+    
+    $text-dark:#141414;
+    $text-light:#fDfBfD;
+
+    $color-primary:#48e5c2;
+    $color-secondary:#197278;
+    $color-dark:#3D3D3D;
+}

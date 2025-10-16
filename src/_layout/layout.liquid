@@ -1,0 +1,95 @@
+---
+title: Doug Watro
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{'/assets/scripts/pathtrace.js' | url}}"></script>
+    <script src="{{'/assets/scripts/rotato.js' | url}}"></script>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+    <script src="{{'/assets/scripts/pixi-filters.js' | url}}"></script>
+    <script src="{{'/assets/scripts/gif.min.js' | url}}"></script>
+    <script src="{{'/assets/scripts/svganim.js' | url}}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    let Mouse = {x:0,y:0};
+    const time = function(){
+      this.then = Date.now();
+      this.now  = Date.now();
+      this.intDelta;
+      this.delta = 0;
+
+      this.NextFrame = function(){
+        this.then = this.now;
+        this.now = Date.now();
+        this.intDelta = (this.now - this.then);
+        this.delta = this.intDelta/1000;
+      }
+
+    }
+      const Time = new time;
+      
+      (function AdvTime(){
+        Time.NextFrame();
+        requestAnimationFrame(AdvTime);
+      })();
+
+      (function ReportMousePos(){
+        document.onmousemove = (e)=>{
+          Mouse.x = e.pageX;
+          Mouse.y = e.pageY;
+        }
+      })();
+
+      
+
+    </script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "EffectComposer": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js",
+          "GlitchPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/GlitchPass.js",
+          "RenderPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/RenderPass.js",
+          "OutputPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/OutputPass.js",
+          "GLTFLoader":"https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+        }
+      }
+    </script>
+
+    <script>
+      const ThreesAssetAtlas = {
+        LeftEye_Default: '{{"/assets/images/home/computer/eyel.gif" | url}}',
+        RightEye_Default: '{{"/assets/images/home/computer/eyer.gif" | url}}',
+        LeftEye_Blink: '{{"/assets/images/home/computer/eyel_blink.gif" | url}}',
+        RightEye_Blink: '{{"/assets/images/home/computer/eyer_blink.gif" | url}}',
+        Mouth_Default: '{{"/assets/images/home/computer/mouth.gif" | url}}',
+        Mouth_Simple: '{{"/assets/images/home/computer/mouth_simple.gif" | url}}',
+        Mouth_Drool: '{{"/assets/images/home/computer/mouth_drool.gif" | url}}',
+        Computer: '{{"/assets/models/computer/computer.glb" | url}}'
+      }
+    </script>
+
+    <link rel="stylesheet" href="{{ '/assets/styles/styles.css' | url }}"/>
+    
+  </head>
+  <body id="Page-{{page.fileSlug}}">
+    {{content}}
+  </body>
+  <script type="module" src="{{'/assets/scripts/hero-computer.js' | url}}"></script>
+</html>

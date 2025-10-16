@@ -1,0 +1,86 @@
+---
+layout: layout.liquid
+title: Home Page
+---
+<section id="Home">
+    <div class="content container">
+        <div class="blank">
+        <div id="HeroComputer">
+            <div class="ground-wrapper">
+                <div class="ground">
+
+                </div>
+                <div class="full-abs circle">
+                    {% include 'svganim/circle' %}
+                    {% include 'svganim/circle' %}
+                    {% include 'svganim/circle' %}
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="project-display">
+            <div class="project-wrapper">
+                <div class="project-scroller swiper">
+                    <div class="swiper-wrapper">
+                        {% include 'home/project-card', name:"FORVR<br/>MOOD", lead:"National luxury candles & fragrances" %}
+                        {% include 'home/project-card', name:"Trusted<br/>Media<br/>Brands", lead:"Globally recognised entertainment company" %}
+                        {% include 'home/project-card', name:"FORVR<br/>MOOD", lead:"National luxury candles & fragrances" %}
+                        {% include 'home/project-card', name:"Trusted<br/>Media<br/>Brands", lead:"Globally recognised entertainment company" %}
+                        {% include 'home/project-card', name:"FORVR<br/>MOOD", lead:"National luxury candles & fragrances" %}
+                        {% include 'home/project-card', name:"Trusted<br/>Media<br/>Brands", lead:"Globally recognised entertainment company" %}
+                    </div>
+                </div>
+                <div class="project-display-controls">
+                    <div class="control prev">
+                        {% include 'icons/project-display-arrow' %}
+                    </div>
+                    <div class="pagination">
+
+                    </div>
+                    <div class="control next">
+                        {% include 'icons/project-display-arrow' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function ProjectSlider(){
+        const master = $('.project-display');
+        const slider = $(master).find('.project-scroller')
+        const controls = $(master).find(".project-display-controls");
+        const pagination = $(controls).find('.pagination');
+        const next = $(controls).find('.control.next');
+        const prev = $(controls).find('.control.prev');
+
+        const swiper = new Swiper($(slider)[0], {
+            // Optional parameters
+            direction: 'vertical',
+            slidesPerView:"auto",
+            spaceBetween:40,
+            mousewheel:true,
+            speed:600,
+            centeredSlides:true,
+            navigation: {
+                nextEl: $(next)[0],
+                prevEl: $(prev)[0],
+                disabledClass:"control-disabled",
+                hiddenClass:"control-hidden"
+            },
+            pagination: {
+                el: $(pagination)[0],
+                type: 'bullets',
+                bulletClass:"project-display-bullet",
+                bulletActiveClass:"active",
+                paginationDisabledClass:"pagination-disabled",
+                clickable:true,
+                
+            }
+        });
+
+    }
+
+    document.addEventListener('DOMContentLoaded',ProjectSlider);
+</script>

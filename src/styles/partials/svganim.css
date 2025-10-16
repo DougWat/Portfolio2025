@@ -1,0 +1,15 @@
+.svg-anim-js{
+    >g{
+        display:none;
+        &.show{
+            display: block;
+        }
+    }
+}
+.svg-anim-line{
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-miterlimit: 6;
+    stroke-width: 1px;
+}

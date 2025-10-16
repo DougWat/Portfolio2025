@@ -1,0 +1,58 @@
+html{
+  font-size:13px;
+  color:$text-dark;
+  font-family: $font-body;
+}
+
+h1,h2,h3,h4,h5,h6,p,a,button,label,textarea,input,option,select{
+  line-height: 1.2em;
+  letter-spacing: .03em;
+  margin:0;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $font-header;
+  line-height: 1.1em;
+  font-weight: 500;
+}
+h1{
+  font-size: 2.82rem;
+}
+h2{
+  font-size: 2.82rem;
+}
+h3{
+  font-size: 2.35rem;
+}
+h4{
+  font-size: 1.75rem;
+}
+h5{
+  font-size: 1.40rem;
+}
+h6{
+  font-size: 1.20rem;
+}
+.lead{
+    font-size: 1.4rem;
+}
+@media (--md){
+  h1{
+    font-size: 2.3rem;
+  }
+  h2{
+    font-size: 2.3rem;
+  }
+  h3{
+    font-size: 1.7rem;
+  }
+  h4{
+    font-size: 1.5rem;
+  }
+  h5{
+    font-size: 1.30rem;
+  }
+  h6{
+    font-size: 1.10rem;
+  }
+}

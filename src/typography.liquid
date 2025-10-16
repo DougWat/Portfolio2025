@@ -1,0 +1,73 @@
+---
+layout: layout.liquid
+title: Typography Example
+permalink: /typography/
+---
+<a style="padding:12px;display:block; float:left;" href="/">Back</a>
+<section class="typography section-padding">
+    <div class="container content">
+        <div class="typography-col typography-typefaces">
+            <div class="typeface-wrapper font-1">
+                <div class="typeface-title">
+                    <p>Bitter</p>
+                </div>
+                <div class="typeface-display">
+                    <h1>Aa</h1>
+                    <h2>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                    abcdefghijklmnopqrstuvwxyz<br/>
+                    0123456789<br/>
+                    !$#S%^&*
+                    </h2>
+                </div>
+            </div>
+            <div class="typeface-wrapper font-2">
+                <div class="typeface-title">
+                    <p>Poppins</p>
+                </div>
+                <div class="typeface-display">
+                    <h1>Aa</h1>
+                    <h2>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                    abcdefghijklmnopqrstuvwxyz<br/>
+                    0123456789<br/>
+                    !$#S%^&*
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class='typography-col typeface-layout'>
+            <div class="segment">
+                <div class="title">
+                    <p>Title</p>
+                </div>
+                <h1>A Cool Title</h1>
+            </div>
+            <div class="segment">
+                <div class="title">
+                    <p>Lead</p>
+                </div>
+                <h1 class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+            </div>
+            <div class="segment">
+                <div class="title">
+                    <p>Paragraph</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+            </div>
+            <div class="segment">
+                <div class="title">
+                    <p>Button</p>
+                </div>
+                <div>
+                    <a class="button">Click Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container colors">
+        {% include 'typography/swatch', color:"#141414" light:"light" %}
+        {% include 'typography/swatch', color:"#3d3d3d" light:"light" %}
+        {% include 'typography/swatch', color:"#197278" light:"light"%}
+        {% include 'typography/swatch', color:"#48e5c2" %}
+        {% include 'typography/swatch', color:"#fdfbfd" %}
+    </div>
+</section>
