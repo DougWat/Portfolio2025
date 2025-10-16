@@ -10,6 +10,7 @@ const _HeroComputer = function(){
     const renderer = new THREE.WebGLRenderer({alpha:true,antialias:true});
     const loader = new GLTFLoader();
 
+    const block = $(".hero-computer-block");
     const element = $("#HeroComputer");
     const lights = [];
 
@@ -68,6 +69,7 @@ const _HeroComputer = function(){
             Screen.ShowStatic();
             Screen.Face().Emot('blink',300);
         });
+        $(block).removeClass('pre-load');
     }
 
     function GetCanvasPos(){
