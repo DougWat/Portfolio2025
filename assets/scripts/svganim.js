@@ -1,5 +1,5 @@
 function SVGAnim(){
-    const framerate = 15;
+    const framerate = 10;
     const frameMillisecond = 1000/framerate;
 
     let frameTime = Date.now();
