@@ -8,6 +8,33 @@ title: Home Page
     </div>
     <div class="content container">
         <div class="hero-computer-block pre-load">
+            <div class="hero-copy-block rellax" data-rellax-speed="4">
+                <h1>Hey, I'm Doug</h1>
+                <p>A frontend developer, and a shopify expert.</p>
+                <script>
+                    function HeroCopy(){
+                        const master = document.querySelector('.hero-copy-block');
+                        const paragraph = master.querySelector("p");
+                        const textArr = master.querySelector("p").innerText.split(" ");
+                        let text = "";
+                        textArr.forEach((s) => {
+                            text += `<span>${s}</span> `;
+                        });
+                        paragraph.innerHTML = text;
+
+                        const spans = paragraph.querySelectorAll("span");
+                        setTimeout(()=>{
+                            spans.forEach((e,i)=>{
+                                setTimeout(()=>{
+                                    e.classList.add('active');
+                                },i * 200)
+                            });
+                        
+                        },500)
+                    }   
+                    HeroCopy();
+                </script>
+            </div>
             <div class="ground-wrapper">
                 <div class="ground">
 

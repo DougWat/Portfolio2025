@@ -19,7 +19,35 @@
         stroke: #dc97e5;
     }
 }
+.hero-copy-block{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    position: absolute;
+    top:-30px;
+    z-index: 2;
+    text-align: center;
+    color:$color-purple;
+    h1{
+        font-size: 4rem;
+    }
+    p{
+        font-size: 1.3rem;
+        display: inline-block;
+        span{
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(20px);
+            transition: opacity 1000ms, transform 1000ms;
+            &.active{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    }
+}
 .hero-computer-block{
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
