@@ -1,0 +1,10 @@
+.rotato-target{
+    --rotato-deg:10deg;
+    transition: transform 300ms;
+    transform-style: preserve-3d;
+    transform: 
+    rotateX(calc(var(--y-div) * var(--rotato-deg))) 
+    rotateY(calc(var(--x-div) * var(--rotato-deg)))
+    translateX(calc(var(--x-div) * 1px))
+    translateY(calc(var(--y-div) * 1px));
+}

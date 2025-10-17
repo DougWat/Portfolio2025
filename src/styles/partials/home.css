@@ -11,6 +11,7 @@
         display: flex;
         width:100%;
         justify-content: space-between;
+                perspective: 1200px;
     }
 }
 #HomeHeroBG{
@@ -148,6 +149,12 @@
     border-radius: 4px;
     box-shadow: 2px 2px 10px #00000022;
     z-index: 10;
+    position: relative;
+    &:hover{
+        .project-wrapper{
+            transform: translate3d(0,0,20px);
+        }
+    }
 }
 .project-wrapper{
     padding:0px 35px;
@@ -157,11 +164,36 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+    transition: transform 500ms;
+    transform: translate3d(0,0,1px);
     .swiper-slide{
         height: auto;
     }
     .swiper-wrapper{
     height: calc(100% - 60px);
+    }
+}
+.project-display-line{
+    position: absolute;
+    height: 2px;
+    left:-5px;
+    right:-5px;
+    top:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .5;
+    box-shadow: 0px 0px 10px $color-purple;
+    svg{
+        height: 15px;
+    }
+    path{
+        fill:transparent;
+        stroke:$color-purple;
+    }
+    &:nth-of-type(2){
+        top:auto;
+        bottom:-1px;
     }
 }
 .project-display-controls{
@@ -269,9 +301,10 @@
     .image{
         height: 200px;
         width: 100%;
-        border: 1px solid black;
         border-radius: 4px;
-        margin-bottom: 12px;;
+        margin-bottom: 12px;
+        background-color: gray;
+        overflow: hidden;
     }
     h2{
         font-size: 3.7rem;

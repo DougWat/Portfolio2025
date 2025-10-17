@@ -35,11 +35,11 @@ title: Home Page
                     HeroCopy();
                 </script>
             </div>
-            <div class="ground-wrapper">
+            <div class="ground-wrapper rotato" style="perspective:1200px">
                 <div class="ground">
 
                 </div>
-                <div class="full-abs circle">
+                <div class="full-abs circle rotato-target">
                     {% include 'svganim/circle', rellax:"-.5" %}
                     {% include 'svganim/circle', rellax:".5" %}
                     {% include 'svganim/circle', rellax:"1.5" %}
@@ -49,7 +49,13 @@ title: Home Page
             </div>
         </div>
 
-        <div class="project-display">
+        <div style="perspective:1200px" class="rellax" data-rellax-speed="4">
+        <div class="project-display rotato rotato-target" style="--rotato-deg:5deg" >
+            {% for i in (2..1) %}
+            <div class="project-display-line">
+                {% include "svganim/line" %}
+            </div>
+            {% endfor %}
             <div class="project-wrapper">
                 <div class="project-scroller swiper">
                     <div class="swiper-wrapper">
@@ -74,6 +80,7 @@ title: Home Page
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 

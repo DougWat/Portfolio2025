@@ -1,5 +1,6 @@
 class Rotato{
     constructor(){
+        console.log("ROTATO");
         this.items = [];
         $(".rotato").each((i,item)=>{
             this.items.push(new RotatoItem(item));
