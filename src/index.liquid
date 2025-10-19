@@ -59,12 +59,26 @@ title: Home Page
             <div class="project-wrapper">
                 <div class="project-scroller swiper">
                     <div class="swiper-wrapper">
-                        {% include 'home/project-card', name:"FORVR<br/>MOOD", lead:"National luxury candles & fragrances" %}
-                        {% include 'home/project-card', name:"Trusted<br/>Media<br/>Brands", lead:"Globally recognised entertainment company" %}
-                        {% include 'home/project-card', name:"FORVR<br/>MOOD", lead:"National luxury candles & fragrances" %}
-                        {% include 'home/project-card', name:"Trusted<br/>Media<br/>Brands", lead:"Globally recognised entertainment company" %}
-                        {% include 'home/project-card', name:"FORVR<br/>MOOD", lead:"National luxury candles & fragrances" %}
-                        {% include 'home/project-card', name:"Trusted<br/>Media<br/>Brands", lead:"Globally recognised entertainment company" %}
+                        {% include 'home/project-card', 
+                            name:"FORVR<br/>MOOD<br/>2025", 
+                            lead:"National luxury candles & fragrances",
+                            copy:"The second of two ground up redesigns."
+                            tech:"html5,css3,javascript,postcss,shopify",
+                            image-path:'/assets/images/test/test2.JPG'
+                        %}
+                        {% include 'home/project-card', 
+                            name:"FORVR<br/>MOOD<br/>2023", 
+                            lead:"National luxury candles & fragrances",
+                            tech:"html5,css3,javascript,postcss,shopify",
+                            copy:"The first of two ground up redesigns.",
+                            image-path:'/assets/images/test/test.JPG'
+                        %}
+                        {% include 'home/project-card', 
+                            name:"Trusted<br/>Media<br/>Brands", 
+                            lead:"Globally recognised entertainment company",
+                            tech:"html5,css3,javascript,postcss,tailwind,react"
+                            image-path:'/assets/images/test/test3.JPG'
+                        %}
                     </div>
                 </div>
                 <div class="project-display-controls">
