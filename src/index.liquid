@@ -139,7 +139,7 @@ title: Home Page
 </script>
 <script>
     function FetchTest(){
-        loadPageContent("/typography","FetchTestElement");
+        loadPageContent("{{ '/typography' | url }}","FetchTestElement");
     }
 
     async function loadPageContent(url, targetElementId) {
