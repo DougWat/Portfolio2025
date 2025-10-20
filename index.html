@@ -84,6 +84,14 @@
 
     <link rel="stylesheet" href="/Portfolio2025/assets/styles/styles.css"/>
     
+    <script>
+      let rellax = null;
+      addEventListener("DOMContentLoaded",()=>{
+        rellax = new Rellax('.rellax'); 
+      });
+    </script>
+    <script type="module" src="/Portfolio2025/assets/scripts/hero-computer.js"></script>
+
   </head>
   <body id="Page-">
     <section id="Home">
@@ -1318,13 +1326,15 @@
         try {
             const response = await fetch(url);
             if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+            const parser = new DOMParser();
             const htmlContent = await response.text();
-
+            const bodyParse = parser.parseFromString(htmlContent,'text/html').body.innerHTML;
+            
             const targetElement = document.getElementById(targetElementId);
             if (targetElement) {
-            targetElement.innerHTML = htmlContent;
+            targetElement.innerHTML = bodyParse;
             } else {
             console.error(`Target element with ID '${targetElementId}' not found.`);
             }
@@ -1333,11 +1343,7 @@
         }
     }
 
-    setTimeout(FetchTest,5000);
+    setTimeout(FetchTest,2000);
 </script>
   </body>
-  <script>
-    var rellax = new Rellax('.rellax'); 
-  </script>
-  <script type="module" src="/Portfolio2025/assets/scripts/hero-computer.js"></script>
 </html>
