@@ -87,12 +87,16 @@ title: Doug Watro
 
     <link rel="stylesheet" href="{{ '/assets/styles/styles.css' | url }}"/>
     
+    <script>
+      let rellax = null;
+      addEventListener("DOMContentLoaded",()=>{
+        rellax = new Rellax('.rellax'); 
+      });
+    </script>
+    <script type="module" src="{{'/assets/scripts/hero-computer.js' | url}}"></script>
+
   </head>
   <body id="Page-{{page.fileSlug}}">
     {{content}}
   </body>
-  <script>
-    var rellax = new Rellax('.rellax'); 
-  </script>
-  <script type="module" src="{{'/assets/scripts/hero-computer.js' | url}}"></script>
 </html>
