@@ -307,7 +307,7 @@
         border-top-right-radius:4px;
         display: flex;
         gap: 12px;
-        color:$color-dark;
+        color:$color-purple;
         .tech-icon{
             width: 18px;
             height: 18px;

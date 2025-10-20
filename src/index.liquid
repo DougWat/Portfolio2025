@@ -50,7 +50,7 @@ title: Home Page
         </div>
 
         <div style="perspective:1200px" class="rellax" data-rellax-speed="4">
-        <div class="project-display rotato rotato-target" style="--rotato-deg:5deg" >
+        <div class="project-display" style="--rotato-deg:5deg" >
             {% for i in (2..1) %}
             <div class="project-display-line">
                 {% include "svganim/line" %}
@@ -62,7 +62,6 @@ title: Home Page
                         {% include 'home/project-card', 
                             name:"FORVR<br/>MOOD<br/>2025", 
                             lead:"National luxury candles & fragrances",
-                            copy:"The second of two ground up redesigns."
                             tech:"html5,css3,javascript,postcss,shopify",
                             image-path:'/assets/images/test/test2.JPG'
                         %}
@@ -70,7 +69,6 @@ title: Home Page
                             name:"FORVR<br/>MOOD<br/>2023", 
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
-                            copy:"The first of two ground up redesigns.",
                             image-path:'/assets/images/test/test.JPG'
                         %}
                         {% include 'home/project-card', 
@@ -95,6 +93,9 @@ title: Home Page
             </div>
         </div>
     </div>
+    </div>
+    <div id="FetchTestElement">
+
     </div>
 </section>
 
@@ -135,4 +136,30 @@ title: Home Page
     }
 
     document.addEventListener('DOMContentLoaded',ProjectSlider);
+</script>
+<script>
+    function FetchTest(){
+        loadPageContent("/typography","FetchTestElement");
+    }
+
+    async function loadPageContent(url, targetElementId) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const htmlContent = await response.text();
+
+            const targetElement = document.getElementById(targetElementId);
+            if (targetElement) {
+            targetElement.innerHTML = htmlContent;
+            } else {
+            console.error(`Target element with ID '${targetElementId}' not found.`);
+            }
+        } catch (error) {
+            console.error('Error fetching or displaying content:', error);
+        }
+    }
+
+    setTimeout(FetchTest,5000);
 </script>

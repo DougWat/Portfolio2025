@@ -4,6 +4,9 @@
             {% assign techIcons = tech | split : "," %}
             <img class="image-cover" src="{{ image-path | url }}"/>
         </div>
+        <h3>{{ lead }}</h3>
+        <h2>{{ name }}</h2>
+        {% if copy %}<p class="copy">{{ copy }}</p>{% endif %}
         <div class="tech-icons {{ icon-color }}">
             {% for techIcon in techIcons %}
                 <div class="tech-icon"   
@@ -13,9 +16,6 @@
                 </div>
             {% endfor %}
         </div>
-        <h3>{{ lead }}</h3>
-        <h2>{{ name }}</h2>
-        {% if copy %}<p class="copy">{{ copy }}</p>{% endif %}
         <div class="line">
             {% include "svganim/line" %}
         </div>
