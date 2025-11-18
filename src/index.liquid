@@ -51,9 +51,6 @@ title: Home Page
 
         <div style="perspective:1200px" class="project-display-wrapper rellax" data-rellax-speed="4">
         <div class="project-display" >
-            <div class="project-item-wrapper" data-simplebar>
-                {% include 'projects/forvr/forvr' %}
-            </div>
             <div class="project-wrapper">
                 <div class="project-scroller swiper">
                     <div class="swiper-wrapper">
@@ -62,19 +59,21 @@ title: Home Page
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
                             image-path:'/assets/images/test/test2.JPG',
-                            page-path:'/forvr2025'
+                            modal-target:'forvr2025'
                         %}
                         {% include 'home/project-card', 
                             name:"FORVR<br/>MOOD<br/>2023", 
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
-                            image-path:'/assets/images/test/test.JPG'
+                            image-path:'/assets/images/test/test.JPG',
+                            modal-target:'forvr2023'
                         %}
                         {% include 'home/project-card', 
                             name:"Trusted<br/>Media<br/>Brands", 
                             lead:"Globally recognised entertainment company",
                             tech:"html5,css3,javascript,postcss,tailwind,react"
-                            image-path:'/assets/images/test/test3.JPG'
+                            image-path:'/assets/images/test/test3.JPG',
+                            modal-target:'tmb'
                         %}
                     </div>
                 </div>
@@ -94,11 +93,16 @@ title: Home Page
     </div>
     </div>
 </section>
-<section id="ProjectModalContainer">
+<section id="ProjectModalContainer" >
+    <div class="background js-project-modal-close"></div>
     <div id="ProjectModal">
-        
+        <button id="ProjectModalCloseButton" class="js-project-modal-close">{% include 'icons/icon-cross' %}</button>
+        <div class="project-item-wrapper" data-simplebar>
+            {% include 'projects/forvr/forvr' %}
+        </div>
     </div>
 </section>
+<!-- Project Slider -->
 <script>
     function ProjectSlider(){
         const master = $('.project-display');
@@ -142,7 +146,7 @@ title: Home Page
         $(cards).each((i,card)=>{
             $(card).on('click',()=>{
                 const path = $(card).data('path');
-                loadPageContent(path,"ProjectModal");
+                //loadPageContent(path,"ProjectModal");
             });
         });
     }
@@ -150,6 +154,7 @@ title: Home Page
     document.addEventListener('DOMContentLoaded',ProjectSlider);
     document.addEventListener('DOMContentLoaded',ProjectCards);
 </script>
+<!-- Computer Man-->
 <script>
 
     async function loadPageContent(url, targetElementId, successCallback) {
@@ -178,4 +183,28 @@ title: Home Page
         }
     }
 
+</script>
+<!-- Project Modal -->
+<script>
+    function ProjectModal(){
+        const master = $("#ProjectModalContainer");
+        const modal = $(master).find('#ProjectModal');
+        const projects = $(modal).find(".project-item");
+        const closeButtons = $(master).find('.js-project-modal-close');
+        const modalOpeners = $('[data-modal-target]');
+        console.log(modalOpeners);
+        $(closeButtons).on("click",()=>{
+            $(master).addClass('translate-out');
+            setTimeout(()=>{
+                $(master).removeClass('active');
+                $(master).removeClass('translate-out');
+            },800);
+        });
+
+        $(modalOpeners).on("click",()=>{
+            $(master).addClass("active");
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded",ProjectModal);
 </script>

@@ -374,6 +374,7 @@
     height: 100%;
     background-color: white;
     z-index: 20;
+    border-radius: 4px;
 }
 .project-item{
     --brand-color:red;
@@ -409,9 +410,7 @@
     .video-wrapper{
         display: flex;
         align-self: center;
-        flex-direction: column;
         gap:24px;
-        max-width: 350px;
         >div{
             box-shadow: 2px 2px 6px rgba(0,0,0,.1);
             overflow: hidden;
@@ -426,6 +425,9 @@
         color:var(--brand-color);
         font-weight: 600;
     }
+    .live-site-button{
+        max-width: 300px;
+    }
 }
 
 #ProjectModalContainer{
@@ -438,18 +440,57 @@
     left:0;
     bottom:0;
     right:0;
-    backdrop-filter: blur(4px);
-    display: flex;
+    backdrop-filter: blur(0px);
     justify-content: center;
     align-items: center;
-    display: none;
+    transition: backdrop-filter 800ms;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -9999;
+    &.active{
+        opacity: 1;
+        pointer-events: all;
+        backdrop-filter: blur(4px);
+        z-index: 100;
+        #ProjectModal{
+            transform: translate(0, 0%);
+        }
+    }
+    .background{
+        position: absolute;
+        top:0;bottom:0;
+        left:0;right:0;
+    }
+    &.translate-out{
+        backdrop-filter: blur(0px);
+        #ProjectModal{
+            transform: translate(0, 150%);
+        }
+    }
 }
 #ProjectModal{
     width: calc(100% - 40px);
-    max-width: 1200px;
+    max-width: 800px;
     height: calc(100vmin - 80px);
     background-color: white;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow: auto;
+    position: relative;
+    transform: translate(0, 150%);
+    transition: transform 800ms;
+    
+}
+#ProjectModalCloseButton{
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
+    position: absolute;
+    border-radius: 100px;
+    left: calc((var(--size) + 20px)*-1);
+    top:0;
+    padding: 10px;
+    color:$color-purple;
 }
