@@ -380,11 +380,10 @@
     padding:30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     .line{
-        svg{
-            stroke:var(--brand-color);
-        }
+        height: 1px;
+        background-color: var(--brand-color);
     }
     h2{
         margin-bottom: 6px;
@@ -406,16 +405,26 @@
 }
 #ForvrProject{
     background-color: #fdfbf9;
-    --brand-color:#76533d;
-    .video{
-        width: 100%;
-    }
+    --brand-color:#6a4027;
     .video-wrapper{
         display: flex;
-        gap:12px;
+        align-self: center;
+        flex-direction: column;
+        gap:24px;
+        max-width: 350px;
+        >div{
+            box-shadow: 2px 2px 6px rgba(0,0,0,.1);
+            overflow: hidden;
+            position: relative;
+            video{
+                position: relative;
+                transform: scale(1.01) translate(0, 1px);
+            }
+        }
     }
     h2,h3,h4{
-        color:var(--brand-color)
+        color:var(--brand-color);
+        font-weight: 600;
     }
 }
 

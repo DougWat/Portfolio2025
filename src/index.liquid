@@ -52,52 +52,7 @@ title: Home Page
         <div style="perspective:1200px" class="project-display-wrapper rellax" data-rellax-speed="4">
         <div class="project-display" >
             <div class="project-item-wrapper" data-simplebar>
-                <div class="project-item" id="ForvrProject">
-
-                    <div class="project-main-image">
-                        <img class="image-cover" src="{{ '/assets/images/test/test2.JPG' | url }}">
-                    </div>
-                    <div class="header">
-                        <h2>FORVR MOOD 2025</h2>
-                        <ul class="project-technology">
-                            <li>Javascript</li>
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>Postcss</li>
-                            <li>Shopify</li>
-                        </ul>
-                    </div>
-                    <p>FORVR Mood is a nationally sold brand speciallizing in luxury candles and fragrances.</p>
-                    <p>They wanted a full scale custom shopify theme implimenting a design contracted from an agency, as well as wanted to reduce their reliance on subscription based apps by having certain functionality provided through the custom theme.</p>
-                    <a class="button button-project" href="https://forvrmood.com" target="_blank">VIEW LIVE SITE</a>
-                    <div class="line">
-                        {% include "svganim/line" %}
-                    </div>
-                    <h4>FRAGRANCE PROFILES</h4>
-                    <p>An interactive graphic is dynamically generated on a per-product basis to visually highlight the complex fragrance profiles.</p>
-                    <div class="video">
-                         <video width="320" height="240" class="image-contain" style="background-color: transparent;" autoplay loop muted playsinline>
-                            <source src="{{ '/assets/projects/forvr/scent-profiles.mp4' | url }}" type="video/mp4">
-                        </video> 
-                    </div>
-                    <p>This graphic can be customized entirely through the Shopify admin.</p>
-                    <div class="line">
-                        {% include "svganim/line" %}
-                    </div>
-                    <div class="video-wrapper">
-                        <div class="video-2">
-                            <video width="320" height="240" class="image-contain" style="background-color: transparent;" autoplay loop muted playsinline>
-                                <source src="{{ '/assets/projects/forvr/fvr-vid-2.mp4' | url }}" type="video/mp4">
-                            </video> 
-                        </div>
-                        <div class="video-2">
-                            <video width="320" height="240" class="image-contain" style="background-color: transparent;" autoplay loop muted playsinline>
-                                <source src="{{ '/assets/projects/forvr/fvr-vid-3.mp4' | url }}" type="video/mp4">
-                            </video> 
-                        </div>
-                    </div>
-                    <p>Our relationship is on-going, changes and additions are made frequently.</p>
-                </div>
+                {% include 'projects/forvr/forvr' %}
             </div>
             <div class="project-wrapper">
                 <div class="project-scroller swiper">
