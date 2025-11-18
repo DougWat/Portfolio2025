@@ -195,6 +195,7 @@ const _Screen = function(){
 
         await app.init({width: 300, height: 300*.84,background: '#1099bb'});
         document.body.appendChild(app.canvas);
+        app.canvas.style.display = "none";
 
         app.stage.addChild(masterContainer);
 

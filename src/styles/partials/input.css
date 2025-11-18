@@ -4,8 +4,9 @@ button{
 }
 .button{
     display: inline-block;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
+    border-radius: 4px;;
     text-transform: uppercase;
     padding:1.35em 2em;
     border: 1.2px solid $text-dark;
@@ -43,89 +44,14 @@ button{
         }
     }
 }
-.button-cream{
-    border-color:$text-light;
-    background-color: $text-light;
+.button-project{
+    border-color:var(--brand-color);
+    color:var(--brand-color);
+    background-color: transparent;
     &:hover{
-        color:$text-dark;
-        border-color:$color-primary;
-        background-color: $color-primary;
-    }
-}
-.button-black{
-        background-color: black;
-    color:white;
-    font-weight: 300;;
-    border: none;
-    transition: opacity 300ms;
-    &:hover{
-        opacity: .8;
-        background-color: black;
-    }
-}
-.button-add-to-cart{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    .hidden-default{
-        opacity: 0;
-    }
-    >span:not(.hidden-default){
-        display: block;
-        position: absolute;
-        width: 100%;
-        transform: translate(-50px,0);
-        padding-top: .05em;
-        opacity: 0;
-        transition: transform 200ms, opacity 200ms;
-    }
-    &.add{
-        .add{
-            transform: translate(0);
-            color:inherit;
-            opacity: 1;
-        }
-    }
-    &.adding{
-        .adding{
-            transform: translate(0);
-            color:inherit;
-            opacity: 1;
-        }
-        .add{
-            transform: translate(50px,0);
-        }
-    }
-    &.added{
-        .added{
-            transform: translate(0);
-            color:inherit;
-            opacity: 1;
-        }
-        .adding{
-            transform: translate(50px,0);
-        }
-    }
-        .compare-at{
-        opacity: .7;
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 300;
-        margin-left: 6px;
-        &:after{
-            content:"";
-            display: block;
-            height: 1px;
-            width: 120%;
-            transform: rotate(-25deg);
-            position: absolute;
-            background-color: currentColor;
-            opacity: .8;
-        }
+        color:$text-light;
+        border-color:var(--brand-color);
+        background-color: var(--brand-color);
     }
 }
 a.text-link{

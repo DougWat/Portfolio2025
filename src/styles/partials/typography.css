@@ -5,7 +5,7 @@ html{
 }
 
 h1,h2,h3,h4,h5,h6,p,a,button,label,textarea,input,option,select{
-  line-height: 1.2em;
+  line-height: 1.5em;
   letter-spacing: .03em;
   margin:0;
 }
