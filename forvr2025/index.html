@@ -1,146 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>FORVR MOOD 2025</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="/Portfolio2025/assets/scripts/pathtrace.js"></script>
-    <script src="/Portfolio2025/assets/scripts/rotato.js"></script>
-    <script src="https://pixijs.download/release/pixi.js"></script>
-    <script src="/Portfolio2025/assets/scripts/pixi-filters.js"></script>
-    <script src="/Portfolio2025/assets/scripts/gif.min.js"></script>
-    <script src="/Portfolio2025/assets/scripts/svganim.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png ">
-
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-
-  <noscript>
-    <style>
-      /**
-      * Reinstate scrolling for non-JS clients
-      */
-      .simplebar-content-wrapper {
-        scrollbar-width: auto;
-        -ms-overflow-style: auto;
-      }
-
-      .simplebar-content-wrapper::-webkit-scrollbar,
-      .simplebar-hide-scrollbar::-webkit-scrollbar {
-        display: initial;
-        width: initial;
-        height: initial;
-      }
-    </style>
-  </noscript>
-
-    <script>
-    let Mouse = {x:0,y:0};
-    const time = function(){
-      this.then = Date.now();
-      this.now  = Date.now();
-      this.intDelta;
-      this.delta = 0;
-
-      this.NextFrame = function(){
-        this.then = this.now;
-        this.now = Date.now();
-        this.intDelta = (this.now - this.then);
-        this.delta = this.intDelta/1000;
-      }
-
-    }
-      const Time = new time;
-      
-      (function AdvTime(){
-        Time.NextFrame();
-        requestAnimationFrame(AdvTime);
-      })();
-
-      (function ReportMousePos(){
-        document.onmousemove = (e)=>{
-          Mouse.x = e.pageX;
-          Mouse.y = e.pageY;
-        }
-      })();
-
-      
-
-    </script>
-
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-          "EffectComposer": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js",
-          "GlitchPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/GlitchPass.js",
-          "RenderPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/RenderPass.js",
-          "OutputPass": "https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/OutputPass.js",
-          "GLTFLoader":"https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
-        }
-      }
-    </script>
-
-    <script>
-      const ThreesAssetAtlas = {
-        LeftEye_Default: '/Portfolio2025/assets/images/home/computer/eyel.gif',
-        RightEye_Default: '/Portfolio2025/assets/images/home/computer/eyer.gif',
-        LeftEye_Blink: '/Portfolio2025/assets/images/home/computer/eyel_blink.gif',
-        RightEye_Blink: '/Portfolio2025/assets/images/home/computer/eyer_blink.gif',
-        Mouth_Default: '/Portfolio2025/assets/images/home/computer/mouth.gif',
-        Mouth_Simple: '/Portfolio2025/assets/images/home/computer/mouth_simple.gif',
-        Mouth_Drool: '/Portfolio2025/assets/images/home/computer/mouth_drool.gif',
-        Computer: '/Portfolio2025/assets/models/computer/computer.glb'
-      }
-    </script>
-
-    <link rel="stylesheet" href="/Portfolio2025/assets/styles/styles.css"/>
-    
-    <script>
-      let rellax = null;
-      addEventListener("DOMContentLoaded",()=>{
-        rellax = new Rellax('.rellax'); 
-      });
-    </script>
-    <script type="module" src="/Portfolio2025/assets/scripts/hero-computer.js"></script>
-
-  </head>
+  <head></head>
   <body id="Page-forvr2025">
     
-<section id="FR25Hero" class="section-padding">
-    <div class="container content">
-        <h1>FORVRMood 2025 Redesign & Product Launch</h1>
-        <p>My client, FORVRMood, wanted to redesign their digital storefront ahead of a product launch.</p>
-        <p>Along with that redesign, they needed to leverage advanced shopify features to communicate the value of their new products.</p>
+<div class="project-item" id="ForvrProject" data-modal-id="forvr2025">
+
+    <div class="project-main-image">
+        <img class="image-cover" src="/Portfolio2025/assets/images/test/test2.JPG">
     </div>
-    <div class="container">
-        <h2>Dynamic SVG Fragrance Display</h2>
-        <p>The client wanted to highlight the head, heart, and base notes of their new fragrance line with images and descriptions in a compact format.</p>
-        <p>This dynamic SVG allows the client to highlight up to 8 notes, and is fully customizable via the shopify admin storefront.</p>
+    <div class="header">
+        <h2>FORVR MOOD 2025</h2>
+        <ul class="project-technology">
+            <li>Javascript</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Postcss</li>
+            <li>Shopify</li>
+        </ul>
     </div>
-    <div class="container">
-        <h2>Simplfied Cart Drawer</h2>
-        <p>The client wanted the benefits of a dynamic cart drawer, without needing to pay for a complicated third party app.</p>
-        <p>This cart drawer dyanamically updates cart contents, quantity, and price, in addition to other features such as product sudgestions, a free-shipping meter, and gift/promotional CTAs</p>
+    <p>FORVR Mood is a nationally sold brand speciallizing in luxury candles and fragrances.</p>
+    <p>They wanted a full scale custom shopify theme implimenting a design contracted from an agency, as well as wanted to reduce their reliance on subscription based apps by having certain functionality provided through the custom theme.</p>
+    <a class="button button-project live-site-button" href="https://forvrmood.com" target="_blank">VIEW LIVE SITE</a>
+    <div class="line"></div>
+    <h4>FRAGRANCE PROFILES</h4>
+    <p>An interactive graphic is dynamically generated on a per-product basis to visually highlight the complex fragrance profiles.</p>
+    <div class="video">
+            <video width="320" height="240" class="image-contain" style="background-color: transparent;" autoplay loop muted playsinline>
+            <source src="/Portfolio2025/assets/projects/forvr/scent-profiles.mp4" type="video/mp4">
+        </video> 
     </div>
-</section>
+    <p>This graphic can be customized entirely through the Shopify admin.</p>
+    <div class="line"></div>
+    <div class="video-wrapper">
+        <div class="video-2">
+            <video width="320" height="240" class="image-contain" style="background-color: transparent;" autoplay loop muted playsinline>
+                <source src="/Portfolio2025/assets/projects/forvr/fvr-vid-2.mp4" type="video/mp4">
+            </video> 
+        </div>
+        <div class="video-2">
+            <video width="320" height="240" class="image-contain" style="background-color: transparent;" autoplay loop muted playsinline>
+                <source src="/Portfolio2025/assets/projects/forvr/fvr-vid-3.mp4" type="video/mp4">
+            </video> 
+        </div>
+    </div>
+</div>
 
   </body>
 </html>
