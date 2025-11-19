@@ -59,14 +59,14 @@ title: Home Page
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
                             image-path:'/assets/images/test/test2.JPG',
-                            modal-target:'forvr2025'
+                            path:'/forvr2025'
                         %}
                         {% include 'home/project-card', 
                             name:"FORVR<br/>MOOD<br/>2023", 
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
                             image-path:'/assets/images/test/test.JPG',
-                            modal-target:'forvr2023'
+                            path:'forvr2023'
                         %}
                         {% include 'home/project-card', 
                             name:"Trusted<br/>Media<br/>Brands", 
@@ -93,12 +93,15 @@ title: Home Page
     </div>
     </div>
 </section>
-<section id="ProjectModalContainer" >
+<section id="ProjectModalContainer">
     <div class="background js-project-modal-close"></div>
     <div id="ProjectModal">
         <button id="ProjectModalCloseButton" class="js-project-modal-close">{% include 'icons/icon-cross' %}</button>
         <div class="project-item-wrapper" data-simplebar>
-            {% include 'projects/forvr/forvr' %}
+            <div id="ProjectModalData">
+
+            </div>
+            {% comment %} {% include 'projects/forvr/forvr' %} {% endcomment %}
         </div>
     </div>
 </section>
@@ -146,7 +149,7 @@ title: Home Page
         $(cards).each((i,card)=>{
             $(card).on('click',()=>{
                 const path = $(card).data('path');
-                //loadPageContent(path,"ProjectModal");
+                loadPageContent(path,"ProjectModalData");
             });
         });
     }
