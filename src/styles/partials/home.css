@@ -520,3 +520,20 @@
     padding: 10px;
     color:$color-purple;
 }
+#TMBProject{
+    --brand-color:#e7ff03;
+    background-color: #0b0b0b;
+    h1,h2,h3,h4,p{
+        color:white;
+    }
+    .button-project{
+        align-self: flex-start;
+        border-radius: 100px;
+        border-color: white;
+        color:white;
+        &:hover{
+            border-color: var(--brand-color);
+            color:#0b0b0b;
+        }
+    }
+}
