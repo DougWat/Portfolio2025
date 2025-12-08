@@ -1,0 +1,28 @@
+.in-dev{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    padding: 24px;
+    min-height: 500px;
+    border-radius: 4px;
+    background-color: rgba(152, 237, 159, 0.289);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
+    h2,p{
+        color:$color-purple;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+    @media(--lg){
+        transform: none;
+        backdrop-filter: blur(3px);
+        transform-style: unset;
+    }
+    @media(--sm){
+        padding:60px 24px;
+        min-height: auto;
+    }
+}

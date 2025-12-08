@@ -45,61 +45,25 @@ title: Home Page
                     {% include 'svganim/circle', rellax:"1.5" %}
                 </div>
             </div>
-            <div id="HeroComputer" class="rellax" data-rellax-speed="2.5">
-            </div>
+            <div id="HeroComputer" class="rellax" data-rellax-speed="2.5"></div>
         </div>
 
-        <div style="perspective:1200px" class="project-display-wrapper rellax" data-rellax-speed="4">
-        <div class="project-display" >
-            <div class="project-wrapper">
-                <div class="project-scroller swiper">
-                    <div class="swiper-wrapper">
-                        {% include 'home/project-card', 
-                            name:"FORVR<br/>MOOD<br/>2025", 
-                            lead:"National luxury candles & fragrances",
-                            tech:"html5,css3,javascript,postcss,shopify",
-                            image-path:'/assets/images/test/test2.JPG',
-                            path:'/forvr2025'
-                        %}
-                        {% include 'home/project-card', 
-                            name:"FORVR<br/>MOOD<br/>2023", 
-                            lead:"National luxury candles & fragrances",
-                            tech:"html5,css3,javascript,postcss,shopify",
-                            image-path:'/assets/images/test/test.JPG',
-                            path:'forvr2023'
-                        %}
-                        {% include 'home/project-card', 
-                            name:"Trusted<br/>Media<br/>Brands", 
-                            lead:"Globally recognized entertainment company",
-                            tech:"html5,css3,javascript,postcss,tailwind"
-                            image-path:'/assets/images/test/test3.JPG',
-                            path:'/tmb'
-                        %}
-                    </div>
-                </div>
-                <div class="project-display-controls">
-                    <div class="control prev">
-                        {% include 'icons/project-display-arrow' %}
-                    </div>
-                    <div class="pagination">
-
-                    </div>
-                    <div class="control next">
-                        {% include 'icons/project-display-arrow' %}
-                    </div>
-                </div>
+        <div style="perspective:1200px" class="project-display-wrapper rotato" style="perspective:1200px">
+            <div class="in-dev rotato-target" >
+                <h2 style="transform:translate3d(0,0,20px)">This site us under development...</h2>
+                <p style="transform:translate3d(0,0,20px)">More content will be added soon!<br/>If you're interested in working with me...</p>
+                <a class="button button-project" style="--brand-color:#664799; transform:translate3d(0,0,20px)" href="mailto:dougwatro@gmail.com">Send Me An Email!</a>
             </div>
         </div>
-    </div>
     </div>
 </section>
-<section id="ProjectModalContainer" class="active">
+<section id="ProjectModalContainer" >
     <div class="background js-project-modal-close"></div>
     <div id="ProjectModal">
         <button id="ProjectModalCloseButton" class="js-project-modal-close">{% include 'icons/icon-cross' %}</button>
         <div class="project-item-wrapper" data-simplebar>
             <div id="ProjectModalData">
-                {% include 'projects/tmb' %}
+                
             </div>
             {% comment %} {% include 'projects/forvr/forvr' %} {% endcomment %}
         </div>

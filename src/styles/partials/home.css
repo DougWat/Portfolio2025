@@ -12,8 +12,10 @@
         width:100%;
         justify-content: space-between;
     }
-    @media (--md){
+    @media (--lg){
         height: auto;
+        min-height: 100vh;
+        padding:24px;
         .content{
             flex-direction: column;
             align-items: center;
@@ -26,6 +28,13 @@
     path{
         fill:none;
         stroke: #dc97e5;
+    }
+}
+#HeroComputer{
+        @media (--lg){
+        height: 300px;
+        width: auto;
+        margin-top: 50px;
     }
 }
 .hero-copy-block{
@@ -70,6 +79,11 @@
         position: absolute;
         transform: scale(1.2);
         transition: transform 500ms;
+        @media(--lg){
+            transform: translate(0,200px) scale(1.2);
+        }
+ 
+
     }
     canvas{
         z-index: 1;
@@ -151,6 +165,10 @@
 .project-display-wrapper{
     --display-width:500px;
     width: var(--display-width);
+    @media(--lg){
+        width: 100%;
+        max-width: var(--display-width);
+    }
 }
 .project-display{
     height: calc(100vh - 200px);
