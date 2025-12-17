@@ -537,12 +537,17 @@ const _Screen = function(){
         crtFilter.vignettingAlpha = .6;
         crtFilter.vignettingBlur = .5;
 
-        pixelateFilter.size = 2.4;
+        pixelateFilter.size = 3.4;
 
         setInterval(()=>{
             crtFilter.time += 1;
             noiseFilter.seed = Math.random();
         },33);
+
+        setInterval(()=>{
+            pixelateFilter.size = 3.4 + (Math.random() * .5 - .25);
+        },100)
+
     }
 
     async function BuildContainers(){
