@@ -48,15 +48,12 @@ title: Home Page
             <div id="HeroComputer" class="rellax" data-rellax-speed="2.5">
             </div>
         </div>
-        {{ eleventy.pathPrefix  }}
-        ____
-        {{ eleventy.config.pathPrefix  }}
         <div style="perspective:1200px" class="project-display-wrapper rellax" data-rellax-speed="4">
         <div class="project-display" >
             <div class="project-wrapper">
                 <div class="project-scroller swiper">
                     <div class="swiper-wrapper">
-                        {% assign path = eleventy.pathPrefix | append: "/forvr2025" %}
+                        {% assign path = "/forvr2025" | url %}
                         {% include 'home/project-card', 
                             name:"FORVR<br/>MOOD<br/>2025", 
                             lead:"National luxury candles & fragrances",
@@ -64,7 +61,7 @@ title: Home Page
                             image-path:'/assets/projects/forvr/forvr25.jpg',
                             path:path
                         %}
-                        {% assign path = "/tmb" | url %}
+                        {% assign path = "/forvr2023" | url %}
                         {% include 'home/project-card', 
                             name:"FORVR<br/>MOOD<br/>2023", 
                             lead:"National luxury candles & fragrances",
@@ -72,7 +69,7 @@ title: Home Page
                             image-path:'/assets/images/test/test.JPG',
                             path: path
                         %}
-                        {% assign path = eleventy.pathPrefix | append: "/tmb" %}
+                        {% assign path = "/tmb" | url %}
                         {% include 'home/project-card', 
                             name:"Trusted<br/>Media<br/>Brands", 
                             lead:"Globally recognized entertainment company",
@@ -80,7 +77,7 @@ title: Home Page
                             image-path:'/assets/projects/tmb/tmb.jpg',
                             path: path
                         %}
-                        {% assign path = eleventy.pathPrefix | append: "/earthgrown" %}
+                        {% assign path = "/earthgrown" | url %}
                         {% include 'home/project-card', 
                             name:"Earth<br/>Grown<br/>Kiddoughs", 
                             lead:"National, organic play-dough brand",
