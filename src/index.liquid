@@ -58,7 +58,7 @@ title: Home Page
                             name:"FORVR<br/>MOOD<br/>2025", 
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
-                            image-path:'/assets/images/test/test2.JPG',
+                            image-path:'/assets/projects/forvr/forvr25.jpg',
                             path:'/forvr2025'
                         %}
                         {% include 'home/project-card', 
@@ -66,14 +66,21 @@ title: Home Page
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
                             image-path:'/assets/images/test/test.JPG',
-                            path:'forvr2023'
+                            path:'/forvr2023'
                         %}
                         {% include 'home/project-card', 
                             name:"Trusted<br/>Media<br/>Brands", 
                             lead:"Globally recognized entertainment company",
-                            tech:"html5,css3,javascript,postcss,tailwind"
-                            image-path:'/assets/images/test/test3.JPG',
+                            tech:"html5,css3,javascript,postcss"
+                            image-path:'/assets/projects/tmb/tmb.JPG',
                             path:'/tmb'
+                        %}
+                        {% include 'home/project-card', 
+                            name:"Earth<br/>Grown<br/>Kiddoughs", 
+                            lead:"National, organic play-dough brand",
+                            tech:"html5,css3,javascript,shopify,postcss,tailwind"
+                            image-path:'/assets/projects/egkd/egkd.jpg',
+                            path:'/earthgrown'
                         %}
                     </div>
                 </div>
@@ -93,13 +100,13 @@ title: Home Page
     </div>
     </div>
 </section>
-<section id="ProjectModalContainer" class="active">
+<section id="ProjectModalContainer">
     <div class="background js-project-modal-close"></div>
     <div id="ProjectModal">
         <button id="ProjectModalCloseButton" class="js-project-modal-close">{% include 'icons/icon-cross' %}</button>
         <div class="project-item-wrapper" data-simplebar>
             <div id="ProjectModalData">
-                {% include 'projects/tmb' %}
+                {% include 'projects/forvr/forvr2023' %}
             </div>
             {% comment %} {% include 'projects/forvr/forvr' %} {% endcomment %}
         </div>
@@ -145,11 +152,22 @@ title: Home Page
     function ProjectCards(){
         const master = $('.project-display');
         const cards = $(master).find(".project-card");
+        const modalContainer = $('#ProjectModalContainer');
+        
 
         $(cards).each((i,card)=>{
+            $(card).on("mouseenter",()=>{
+                globalThis.HeroComputer.DisplayProject($(card).data('path'));
+            });
+            $(card).on("mouseleave",()=>{
+                globalThis.HeroComputer.HideProject();
+            });
             $(card).on('click',()=>{
                 const path = $(card).data('path');
-                loadPageContent(path,"ProjectModalData");
+                loadPageContent(path,"ProjectModalData",() => {
+                    console.log(modalContainer);
+                    $('#ProjectModalContainer .simplebar-content-wrapper')[0].scrollTop = 0;
+                });
             });
         });
     }
@@ -157,9 +175,7 @@ title: Home Page
     document.addEventListener('DOMContentLoaded',ProjectSlider);
     document.addEventListener('DOMContentLoaded',ProjectCards);
 </script>
-<!-- Computer Man-->
 <script>
-
     async function loadPageContent(url, targetElementId, successCallback) {
         try {
             const response = await fetch(url);
@@ -195,7 +211,7 @@ title: Home Page
         const projects = $(modal).find(".project-item");
         const closeButtons = $(master).find('.js-project-modal-close');
         const modalOpeners = $('[data-modal-target]');
-        console.log(modalOpeners);
+
         $(closeButtons).on("click",()=>{
             $(master).addClass('translate-out');
             setTimeout(()=>{

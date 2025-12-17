@@ -306,6 +306,8 @@
     flex-direction: column;
     gap: 12px;
     color: $color-purple;
+    cursor: pointer;
+    transition: transform 300ms;
     .tech-icons{
         bottom:0px;
         left:0px;
@@ -366,6 +368,9 @@
             fill:transparent;
             stroke:$color-purple;
         }
+    }
+    &:hover{
+        transform: scale(1.02);
     }
 }
 .project-item-wrapper{
@@ -519,6 +524,11 @@
     top:0;
     padding: 10px;
     color:$color-purple;
+    cursor:pointer;
+    transition: transform 300ms;
+    &:hover{
+        transform: scale(1.05);
+    }
 }
 #TMBProject{
     --brand-color:#e7ff03;
@@ -534,6 +544,21 @@
         &:hover{
             border-color: var(--brand-color);
             color:#0b0b0b;
+        }
+    }
+}
+#Earthgrown{
+    --brand-color:#c254e0;
+    .images{
+        display: flex;
+        gap:12px;
+        .side{
+            display: flex;
+            flex-direction: column;
+            gap:12px;
+        }
+        .image{
+                box-shadow: 2px 2px 10px #00000022;
         }
     }
 }

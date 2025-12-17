@@ -43,6 +43,16 @@ button{
             color:$text-light;
         }
     }
+    &.button-project{
+        background-color: var(--brand-color);
+        color:$text-light;
+        transition: opacity 300ms;
+        &:hover{
+            background-color: var(--brand-color);
+            opacity: .8;
+            color:white
+        }
+    }
 }
 .button-project{
     border-color:var(--brand-color);
