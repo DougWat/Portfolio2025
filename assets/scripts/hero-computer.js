@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'GLTFLoader';
 
-let HeroComputer;
+globalThis.HeroComputer;
 let Screen;
 
 const _HeroComputer = function(){
@@ -172,6 +172,15 @@ const _HeroComputer = function(){
         screenMesh.material.emissiveMap = texture;
         screenMesh.material.emissiveIntensity = 1;
     }
+
+    this.DisplayProject = (asset) =>{
+        currentRot.x += (Math.floor(Math.random() - .5) + .5) * .3;
+        currentRot.y += (Math.floor(Math.random() - .5) + .5) * .1;
+        Screen.DisplayImage(asset);
+    }
+    this.HideProject = () =>{
+        Screen.HideImage();
+    }
 }
 
 const _Screen = function(){
@@ -202,6 +211,7 @@ const _Screen = function(){
         containers.background = AddContainer(true);
         containers.face = AddContainer(true);
         containers.emojis = AddContainer(true);
+        containers.image = AddContainer();
         containers.static = AddContainer();
 
         PIXI.Assets.addBundle('face',{
@@ -211,7 +221,11 @@ const _Screen = function(){
             RightEye_Blink: ThreesAssetAtlas.RightEye_Blink,
             Mouth_Default: ThreesAssetAtlas.Mouth_Default,
             Mouth_Simple: ThreesAssetAtlas.Mouth_Simple,
-            Mouth_Drool: ThreesAssetAtlas.Mouth_Drool
+            Mouth_Drool: ThreesAssetAtlas.Mouth_Drool,
+            Empty:ThreesAssetAtlas.Empty,
+            FORVR25:ThreesAssetAtlas.FORVR25,
+            TMB: ThreesAssetAtlas.TMB,
+            EGKD: ThreesAssetAtlas.EGKD
         });
 
         BuildFace();
@@ -250,11 +264,36 @@ const _Screen = function(){
         this.MouthEmot = function(name,time){
 
         }
+        this.projectImage = new PIXI.Sprite({
+            texture:bundle.TMB,
+            anchor:.5,
+            position:{x:app.screen.width / 2,y:app.screen.height / 2},
 
+        });
+        containers.image.addChild(this.projectImage);
+        
         this.Render = (pos) =>{
             this.Eyes.Render(pos);
             this.Mouth.Render(pos);
             this.Emojis.Render();
+            this.projectImage.position.set(app.screen.width / 2 + (Math.random() * 1 - .5), app.screen.height / 2 + (Math.random() * 1 - .5))
+        }
+
+        this.SetProjectImage = (asset) =>{
+            let image;
+
+            switch(asset){
+                case "/forvr2025":
+                    image = bundle.FORVR25;break;
+                case "/earthgrown":
+                    image = bundle.EGKD;break;
+                case "/tmb":
+                    image = bundle.TMB;break;
+                default:
+                    image = bundle.Empty;break;
+            }
+
+            this.projectImage.texture = image;
         }
 
         let randBlink = Math.random() * 8000 + 500;
@@ -527,6 +566,17 @@ const _Screen = function(){
         return c;
     }
 
+    this.DisplayImage = (asset) =>{
+        this.ShowStatic();
+        containers.image.visible = true;
+        _face.SetProjectImage(asset);
+
+    }
+    this.HideImage = () =>{
+        this.ShowStatic();
+        containers.image.visible = false;
+    }
+
     this.ShowStatic = function(){
         containers.static.visible = true;
         setTimeout(()=>{
@@ -550,6 +600,6 @@ const _Screen = function(){
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
-    HeroComputer = new _HeroComputer();
+    globalThis.HeroComputer = new _HeroComputer();
     Screen = new _Screen();
 });
