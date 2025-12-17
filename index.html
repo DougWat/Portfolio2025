@@ -942,9 +942,8 @@
             <div class="project-wrapper">
                 <div class="project-scroller swiper">
                     <div class="swiper-wrapper">
-                        
                         <div class='swiper-slide'>
-    <div class="project-card " style="" data-modal-target="/Portfolio2025/forvr2025" data-path="/Portfolio2025/forvr2025">
+    <div class="project-card " style="" data-modal-target="/forvr2025" data-path="/Portfolio2025/forvr2025" data-path-raw="/forvr2025">
         <div class="image">
             
             <img class="image-cover" src="/Portfolio2025/assets/projects/forvr/forvr25.jpg"/>
@@ -1051,9 +1050,8 @@
         </div>
     </div>  
 </div>
-                        
                         <div class='swiper-slide'>
-    <div class="project-card " style="" data-modal-target="/Portfolio2025/forvr2023" data-path="/Portfolio2025/forvr2023">
+    <div class="project-card " style="" data-modal-target="/forvr2023" data-path="/Portfolio2025/forvr2023" data-path-raw="/forvr2023">
         <div class="image">
             
             <img class="image-cover" src="/Portfolio2025/assets/images/test/test.JPG"/>
@@ -1160,9 +1158,8 @@
         </div>
     </div>  
 </div>
-                        
                         <div class='swiper-slide'>
-    <div class="project-card " style="" data-modal-target="/Portfolio2025/tmb" data-path="/Portfolio2025/tmb">
+    <div class="project-card " style="" data-modal-target="/tmb" data-path="/Portfolio2025/tmb" data-path-raw="/tmb">
         <div class="image">
             
             <img class="image-cover" src="/Portfolio2025/assets/projects/tmb/tmb.jpg"/>
@@ -1253,9 +1250,8 @@
         </div>
     </div>  
 </div>
-                        
                         <div class='swiper-slide'>
-    <div class="project-card " style="" data-modal-target="/Portfolio2025/earthgrown" data-path="/Portfolio2025/earthgrown">
+    <div class="project-card " style="" data-modal-target="/earthgrown" data-path="/Portfolio2025/earthgrown" data-path-raw="/earthgrown">
         <div class="image">
             
             <img class="image-cover" src="/Portfolio2025/assets/projects/egkd/egkd.jpg"/>
@@ -1500,7 +1496,7 @@
 
         $(cards).each((i,card)=>{
             $(card).on("mouseenter",()=>{
-                globalThis.HeroComputer.DisplayProject($(card).data('path'));
+                globalThis.HeroComputer.DisplayProject($(card).data('path-raw'));
             });
             $(card).on("mouseleave",()=>{
                 globalThis.HeroComputer.HideProject();
