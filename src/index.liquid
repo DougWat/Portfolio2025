@@ -53,37 +53,33 @@ title: Home Page
             <div class="project-wrapper">
                 <div class="project-scroller swiper">
                     <div class="swiper-wrapper">
-                        {% assign path = "/forvr2025" | url %}
                         {% include 'home/project-card', 
                             name:"FORVR<br/>MOOD<br/>2025", 
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
                             image-path:'/assets/projects/forvr/forvr25.jpg',
-                            path:path
+                            path:"/forvr2025"
                         %}
-                        {% assign path = "/forvr2023" | url %}
                         {% include 'home/project-card', 
                             name:"FORVR<br/>MOOD<br/>2023", 
                             lead:"National luxury candles & fragrances",
                             tech:"html5,css3,javascript,postcss,shopify",
                             image-path:'/assets/images/test/test.JPG',
-                            path: path
+                            path: "/forvr2023"
                         %}
-                        {% assign path = "/tmb" | url %}
                         {% include 'home/project-card', 
                             name:"Trusted<br/>Media<br/>Brands", 
                             lead:"Globally recognized entertainment company",
                             tech:"html5,css3,javascript,postcss"
                             image-path:'/assets/projects/tmb/tmb.jpg',
-                            path: path
+                            path: "/tmb"
                         %}
-                        {% assign path = "/earthgrown" | url %}
                         {% include 'home/project-card', 
                             name:"Earth<br/>Grown<br/>Kiddoughs", 
                             lead:"National, organic play-dough brand",
                             tech:"html5,css3,javascript,shopify,postcss,tailwind"
                             image-path:'/assets/projects/egkd/egkd.jpg',
-                            path:path
+                            path:"/earthgrown"
                         %}
                     </div>
                 </div>
@@ -160,7 +156,7 @@ title: Home Page
 
         $(cards).each((i,card)=>{
             $(card).on("mouseenter",()=>{
-                globalThis.HeroComputer.DisplayProject($(card).data('path'));
+                globalThis.HeroComputer.DisplayProject($(card).data('path-raw'));
             });
             $(card).on("mouseleave",()=>{
                 globalThis.HeroComputer.HideProject();
