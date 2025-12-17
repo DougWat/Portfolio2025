@@ -64,7 +64,7 @@ title: Home Page
                             image-path:'/assets/projects/forvr/forvr25.jpg',
                             path:path
                         %}
-                        {% assign path = eleventy.pathPrefix | append: "/forvr2023" %}
+                        {% assign path = "/tmb" | url %}
                         {% include 'home/project-card', 
                             name:"FORVR<br/>MOOD<br/>2023", 
                             lead:"National luxury candles & fragrances",
@@ -78,7 +78,7 @@ title: Home Page
                             lead:"Globally recognized entertainment company",
                             tech:"html5,css3,javascript,postcss"
                             image-path:'/assets/projects/tmb/tmb.jpg',
-                            path:path
+                            path: path
                         %}
                         {% assign path = eleventy.pathPrefix | append: "/earthgrown" %}
                         {% include 'home/project-card', 
